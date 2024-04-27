@@ -7,19 +7,19 @@ are multiple faces, then the largest is chosen).
 e.g.
 
 face_recog/data
-	photos_raw
-		person1-name
-			person1-photo1.jpg
-			person1-photo1.png
-			...
-			
-		person2-name
-			person2-photo1.jpg
-			person2-photo2.jpg
-			...
-			
-		person3-name
-			...
+    photos_raw
+        person1-name
+            person1-photo1.jpg
+            person1-photo1.png
+            ...
+            
+        person2-name
+            person2-photo1.jpg
+            person2-photo2.jpg
+            ...
+            
+        person3-name
+            ...
 
 CREATE AND TRAIN A NEURAL NETWORK MODEL
 
@@ -53,33 +53,33 @@ preserve the source file name and extension, for easy cross-reference.
 
 face_recog/data
 
-	face_classifier.pt
-	
-	photos_raw
-		person1-name
-			person1-photo1.jpg
-			person1-photo1.png
-			...
-			
-		person2-name
-			person2-photo1.jpg
-			person2-photo2.jpg
-			...
-			
-		person3-name
-			...
-	photos_aligned_faces
-			person1-photo1.jpg
-			person1-photo1.png
-			...
-			
-		person2-name
-			person2-photo1.jpg
-			person2-photo2.jpg
-			...
-			
-		person3-name
-			...
+    face_classifier.pt
+    
+    photos_raw
+        person1-name
+            person1-photo1.jpg
+            person1-photo1.png
+            ...
+            
+        person2-name
+            person2-photo1.jpg
+            person2-photo2.jpg
+            ...
+            
+        person3-name
+            ...
+    photos_aligned_faces
+            person1-photo1.jpg
+            person1-photo1.png
+            ...
+            
+        person2-name
+            person2-photo1.jpg
+            person2-photo2.jpg
+            ...
+            
+        person3-name
+            ...
 
 
 RUNNING FACE RECOGNITION ON LIVE VIDEO
@@ -91,6 +91,4 @@ ros2 run face_recog live_face_recog.py
 
 A full demo using usb_webcam and displaying marked-up video on screen can be run by:
 
-roslaunch face_recog face_recog.launch
-
-
+ros2 launch face_recog face_recog_demo.launch.xml

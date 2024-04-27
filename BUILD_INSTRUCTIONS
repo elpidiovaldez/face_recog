@@ -8,12 +8,7 @@ git clone git@github.com:elpidiovaldez/vision_interfaces.git
 cd ~/ros2_ws
 colcon build --symlink-install
 
-#You must copy classifier_model.py to the install space to avoid a runtime error.
-#I am sure there is a better way to handle this, but ros package configuration is pure wizardry and I 
-#cannot get any help with it from the ros community.
-
-cd ~/ros2_ws
-cp src/face_recog/face_recog/classifier_model.py install/face_recog/lib/face_recog
+#Now you need to provide your own face data and train the recogniser - see USAGE INSTRUCTIONS
 
 #Start the recogniser:
 
@@ -23,6 +18,11 @@ cp src/face_recog/face_recog/classifier_model.py install/face_recog/lib/face_rec
 #Start a webcamera video stream in another terminal:
 
   ros2 run v4l2_camera v4l2_camera_node  --ros-args --remap image_raw:=image -p image_size:=[800,600]
-
   
+  
+Or run a complete demo:
+ 
+  cd ~/ros2_ws
+  source install/setup.bash
+  ros2 launch face_recog face_recog_demo.launch.xml
   
