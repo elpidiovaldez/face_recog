@@ -1,8 +1,8 @@
 #Clone two packages into your ros2 workspace.
 
 cd ~/ros2_ws/src
-git clone git@github.com:elpidiovaldez/ros2_vision_interfaces.git
-git clone git@github.com:elpidiovaldez/ros2_face_recog.git
+git clone git@github.com:elpidiovaldez/face_recog.git
+git clone git@github.com:elpidiovaldez/vision_interfaces.git
 
 #Build the packages
 cd ~/ros2_ws
@@ -12,13 +12,12 @@ colcon build --symlink-install
 #I am sure there is a better way to handle this, but ros package configuration is pure wizardry and I 
 #cannot get any help with it from the community.
 
-cp ~/ros2_ws/src/face_recog/face_recog/classifier_model.py ~/ros2_ws/install/face_recog/lib/face_recog
+cd ~/ros2_ws
+cp src/face_recog/face_recog/classifier_model.py install/face_recog/lib/face_recog
 
 
 #Start a webcamera video stream in a terminal:
 
-  cd ~/ros2_ws
-  source install/setup.bash
   ros2 run v4l2_camera v4l2_camera_node  --ros-args --remap image_raw:=image -p image_size:=[800,600]
 
 #Start the recogniser in another terminal:
