@@ -1,3 +1,5 @@
+Install facenet_pytorch - see https://github.com/timesler/facenet-pytorch
+
 #Clone two packages into your ros2 workspace.
 
 cd ~/ros2_ws/src
